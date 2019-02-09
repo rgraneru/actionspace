@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Invitation Confirmation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<!--<h1 th:text="${errorMessage}"></h1>-->
+<h2>Invite sent to</h2>
+
+<p th:text="${name}"></p>
+<p th:text="${email}"></p>
+<p>For project</p>
+<p th:text="${projectName}"></p>
+
+<h2>Invite sent by</h2>
+<p th:text="${invitedBy}"></p>
+
+<h3><a href="/">Send another</a></h3>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+
+</body>
+</html>

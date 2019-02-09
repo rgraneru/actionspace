@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Send invite</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Who shall receive an invite</h1>
+<p th:text="${name}"></p>
+<form action="#" th:action="@{/sendInvite}" th:object="${invite}" method="post">
+    <p>Email: <input type="text" th:field="*{email}" /></p>
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>Project: <select th:field="*{projectId}">
+        <option
+                th:each="project: ${projects}"
+                th:value="${project.id}"
+                th:text="${project.name}">
+        </option>
+    </select>
+    </p>
+    <p><input type="submit" value="Submit" /></p>
+
+</form>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+
+</body>
+</html>
